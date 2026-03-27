@@ -27,19 +27,29 @@ const About = () => {
           >
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-bakery-dark">Our Story</h1>
             <p className="text-lg text-bakery-primary/80 leading-relaxed">
-              SweetCrust Bakery began with a simple idea: to bring the authentic taste of European pastries and artisan breads right here to our local community. What started as a small home kitchen operation has grown into a cherished neighborhood staple.
+              Welcome to our bakery, where every bite is a celebration of taste, freshness, and tradition. We take pride in crafting high-quality baked goods using the finest ingredients, ensuring every product is made with care and passion.
             </p>
             <p className="text-lg text-bakery-primary/80 leading-relaxed">
-              Every single day, before the sun even rises, our team of dedicated bakers is hard at work. We believe in the magic of from-scratch baking, using only the finest organic ingredients, real butter, and long-fermentation processes to ensure every bite is perfect.
+              From freshly baked breads and soft buns to delicious cakes, pastries, and snacks, our goal is to bring joy to your everyday moments. Whether you're celebrating a special occasion or simply craving something sweet, we have something for everyone.
             </p>
-            <div className="pt-6 grid grid-cols-2 gap-8 text-center border-t border-bakery-accent/30">
+            <p className="text-lg text-bakery-primary/80 leading-relaxed">
+              Our bakery combines traditional recipes with modern flavors to create a unique experience for our customers. We believe in quality, hygiene, and customer satisfaction, and we strive to deliver the best in every order.
+            </p>
+            <p className="text-lg text-bakery-primary/80 leading-relaxed">
+              With a warm and welcoming atmosphere, we are more than just a bakery — we are a place where memories are made and happiness is shared. Thank you for choosing us and being a part of our journey.
+            </p>
+            <div className="pt-6 grid grid-cols-3 gap-6 text-center border-t border-bakery-accent/30">
                <div>
                   <p className="text-4xl font-serif font-bold text-bakery-accent">100%</p>
-                  <p className="text-sm text-bakery-dark mt-1">From Scratch</p>
+                  <p className="text-sm text-bakery-dark mt-1">Fresh Ingredients</p>
                </div>
                <div>
                   <p className="text-4xl font-serif font-bold text-bakery-accent">Daily</p>
                   <p className="text-sm text-bakery-dark mt-1">Fresh Baking</p>
+               </div>
+               <div>
+                  <p className="text-4xl font-serif font-bold text-bakery-accent">❤️</p>
+                  <p className="text-sm text-bakery-dark mt-1">Made with Love</p>
                </div>
             </div>
           </motion.div>
