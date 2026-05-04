@@ -31,14 +31,12 @@ const Menu = () => {
         console.error("Using fallback data due to fetch error:", err);
         // Fallback data
         setProducts([
-          { id: 1, name: "Chocolate Truffle Cake", category: "cakes", price: 25, description: "Rich chocolate cake with truffle frosting", image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&auto=format&fit=crop" },
-          { id: 2, name: "Vanilla Bean Cupcake", category: "pastries", price: 4, description: "Classic vanilla cupcake with buttercream", image: "https://images.unsplash.com/photo-1551024601-bec78aea704b?w=500&auto=format&fit=crop" },
-          { id: 3, name: "Sourdough Bread", category: "breads", price: 8, description: "Freshly baked artisan sourdough loaf", image: "https://images.unsplash.com/photo-1585478259715-876acc5be8eb?w=500&auto=format&fit=crop" },
-          { id: 4, name: "Butter Croissant", category: "pastries", price: 3.5, description: "Flaky, buttery French pastry", image: "https://images.unsplash.com/photo-1555507036-ab1e4006a2a0?w=500&auto=format&fit=crop" },
-          { id: 5, name: "Strawberry Shortcake", category: "cakes", price: 30, description: "Light sponge cake with fresh strawberries", image: "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=500&auto=format&fit=crop" },
-          { id: 6, name: "Cinnamon Roll", category: "pastries", price: 4.5, description: "Warm cinnamon roll with cream cheese icing", image: "https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=500&auto=format&fit=crop" },
-          { id: 8, name: "Chocolate Chip Cookie", category: "snacks", price: 2, description: "Classic cookie with gooey chocolate chips", image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=500&auto=format&fit=crop" },
-          { id: 9, name: "Iced Caramel Macchiato", category: "beverages", price: 5.5, description: "Espresso with milk, vanilla, and caramel drizzle", image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&auto=format&fit=crop" }
+          { id: 1, name: "Cheese Kunafa (Small)", category: "Kunafas", price: 150, description: "Authentic Middle Eastern dessert with a rich cheese filling.", image: "https://images.unsplash.com/photo-1627844642677-8b38cb71900a?w=500&auto=format&fit=crop" },
+          { id: 2, name: "Cheese Kunafa (Regular)", category: "Kunafas", price: 170, description: "Classic cheese-filled Kunafa, served warm.", image: "https://images.unsplash.com/photo-1627844642677-8b38cb71900a?w=500&auto=format&fit=crop" },
+          { id: 3, name: "Cream Kunafa", category: "Kunafas", price: 240, description: "Velvety cream-filled Kunafa, a local favorite.", image: "https://images.unsplash.com/photo-1634255146522-83569727409f?w=500&auto=format&fit=crop" },
+          { id: 4, name: "Nutella Kunafa", category: "Kunafas", price: 260, description: "Kunafa topped with a generous layer of Nutella.", image: "https://images.unsplash.com/photo-1579306194872-64d3b14f71ec?w=500&auto=format&fit=crop" },
+          { id: 5, name: "Nutty Kunafa", category: "Kunafas", price: 280, description: "Crunchy Kunafa loaded with assorted nuts.", image: "https://images.unsplash.com/photo-1539136788836-5699e78bab75?w=500&auto=format&fit=crop" },
+          { id: 12, name: "Mango Lassi", category: "Beverages", price: 100, description: "Traditional sweet mango yogurt drink.", image: "https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?w=500&auto=format&fit=crop" }
         ]);
       } finally {
         setLoading(false);
@@ -51,7 +49,7 @@ const Menu = () => {
     }, 800);
   }, [location.search]);
 
-  const categories = ['All', 'Cakes', 'Pastries', 'Breads', 'Snacks', 'Beverages'];
+  const categories = ['All', 'Kunafas', 'Ice Creams', 'Milkshakes', 'Beverages'];
 
   const filteredProducts = products.filter(product => {
     const matchesCategory = activeCategory === 'All' || product.category.toLowerCase() === activeCategory.toLowerCase();
@@ -68,23 +66,23 @@ const Menu = () => {
           transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
           className="w-16 h-16 border-4 border-bakery-accent border-t-bakery-dark rounded-full"
         />
-        <h2 className="text-2xl font-serif text-bakery-dark animate-pulse">Baking in progress...</h2>
+        <h2 className="text-2xl font-serif text-bakery-light animate-pulse">Baking in progress...</h2>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen pt-28 pb-20 bg-bakery-light">
+    <div className="min-h-screen pt-28 pb-20">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <h1 className="text-5xl font-serif font-bold text-bakery-dark mb-4 drop-shadow-sm">Our Menu</h1>
-          <p className="text-bakery-primary opacity-80 text-lg">
+          <h1 className="text-5xl font-serif font-bold text-bakery-light mb-4 drop-shadow-sm">Our Menu</h1>
+          <p className="text-bakery-light/80 opacity-90 text-lg">
             Discover our wide selection of freshly baked goods, made daily with love and the finest ingredients.
           </p>
         </div>
 
         {/* Search and Filters */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-12 bg-white p-4 rounded-2xl shadow-sm border border-bakery-accent/10">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-12 glass p-4 rounded-2xl shadow-sm border border-bakery-accent/20">
           
           <div className="flex gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0 custom-scrollbar hide-scrollbar-mobile">
             {categories.map((cat) => (
@@ -94,7 +92,7 @@ const Menu = () => {
                 className={`px-6 py-2 rounded-full whitespace-nowrap transition-all font-medium text-sm border-2 ${
                   activeCategory === cat 
                     ? 'bg-bakery-accent text-white border-bakery-accent shadow-md' 
-                    : 'bg-transparent text-bakery-dark hover:border-bakery-accent/50 border-transparent hover:bg-bakery-light'
+                    : 'bg-transparent text-bakery-light hover:border-bakery-accent/50 border-transparent hover:bg-white/10'
                 }`}
               >
                 {cat}
@@ -109,7 +107,7 @@ const Menu = () => {
               placeholder="Search treats..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 bg-bakery-light/50 border-2 border-transparent focus:bg-white focus:border-bakery-accent outline-none rounded-full transition-all text-sm font-medium text-bakery-dark placeholder:text-bakery-primary/50"
+              className="w-full pl-12 pr-4 py-3 bg-white/10 border-2 border-transparent focus:bg-white/20 focus:border-bakery-accent outline-none rounded-full transition-all text-sm font-medium text-bakery-light placeholder:text-bakery-light/50"
             />
           </div>
         </div>
@@ -118,8 +116,8 @@ const Menu = () => {
         {filteredProducts.length === 0 ? (
           <div className="text-center py-20 flex flex-col items-center">
             <Cookie size={64} className="text-bakery-primary/30 mb-4" />
-            <h3 className="text-2xl font-serif text-bakery-dark mb-2">No treats found</h3>
-            <p className="text-bakery-primary opacity-80">Try adjusting your filters or search query.</p>
+            <h3 className="text-2xl font-serif text-bakery-light mb-2">No treats found</h3>
+            <p className="text-bakery-light/80">Try adjusting your filters or search query.</p>
             <button 
               onClick={() => { setSearchQuery(''); setActiveCategory('All'); }}
               className="mt-6 text-bakery-accent hover:underline font-bold"

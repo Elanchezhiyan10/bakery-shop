@@ -11,7 +11,7 @@ const ProductCard = ({ product }) => {
       whileHover={{ y: -5 }}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-bakery-accent/10 flex flex-col h-full group"
+      className="glass rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-bakery-accent/20 flex flex-col h-full group"
     >
       <div className="relative h-56 overflow-hidden bg-bakery-light/50">
         <img
@@ -28,13 +28,13 @@ const ProductCard = ({ product }) => {
       </div>
 
       <div className="p-5 flex flex-col flex-grow">
-        <h3 className="text-xl font-serif font-bold text-bakery-dark mb-2 line-clamp-1">{product.name}</h3>
-        <p className="text-sm text-bakery-primary/80 mb-4 line-clamp-2 flex-grow">
+        <h3 className="text-xl font-serif font-bold text-bakery-light mb-2 line-clamp-1">{product.name}</h3>
+        <p className="text-sm text-bakery-light/80 mb-4 line-clamp-2 flex-grow">
           {product.description}
         </p>
 
         <div className="flex items-center justify-between mt-auto">
-          <span className="text-2xl font-bold text-bakery-accent">${product.price.toFixed(2)}</span>
+          <span className="text-2xl font-bold text-bakery-accent">₹{product.price.toFixed(2)}</span>
           <button
             onClick={() => addToCart(product)}
             className="bg-bakery-dark hover:bg-bakery-primary text-bakery-light p-3 rounded-xl transition-colors active:scale-95 shadow-md flex items-center justify-center gap-2"

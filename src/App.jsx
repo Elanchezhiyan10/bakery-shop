@@ -14,8 +14,17 @@ function App() {
   return (
     <CartProvider>
       <Router>
-        <div className="flex flex-col min-h-screen relative font-sans text-bakery-dark bg-bakery-light">
-          <Navbar />
+        <div className="flex flex-col min-h-screen relative font-sans text-bakery-light bg-bakery-dark">
+          <div className="fixed inset-0 z-0">
+            <img
+              src="https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=1920&q=80"
+              alt="Kunafa Background"
+              className="w-full h-full object-cover object-center brightness-[0.4] animate-pan"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-bakery-dark/80 via-bakery-dark/60 to-bakery-dark/90"></div>
+          </div>
+          <div className="relative z-10 flex flex-col min-h-screen">
+            <Navbar />
           <CartDrawer />
           <main className="flex-grow">
             <Routes>
@@ -27,6 +36,7 @@ function App() {
             </Routes>
           </main>
           <Footer />
+          </div>
         </div>
       </Router>
     </CartProvider>

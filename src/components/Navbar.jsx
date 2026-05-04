@@ -32,13 +32,13 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-serif font-bold text-bakery-dark flex items-center gap-2">
+        <Link to="/" className="text-2xl font-serif font-bold text-bakery-light flex items-center gap-2">
           <span className="text-bakery-accent border-2 border-bakery-accent rounded-full p-1 border-dotted">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM11 19.93C7.05 19.43 4 16.05 4 12C4 7.95 7.05 4.57 11 4.07V19.93ZM13 4.07C16.95 4.57 20 7.95 20 12C20 16.05 16.95 19.43 13 19.93V4.07Z" fill="currentColor"/>
             </svg>
           </span>
-          SweetCrust
+          Kunafa Heaven
         </Link>
 
         {/* Desktop Nav */}
@@ -48,7 +48,7 @@ const Navbar = () => {
               key={link.name}
               to={link.path}
               className={`text-lg font-medium transition-colors hover:text-bakery-accent ${
-                location.pathname === link.path ? 'text-bakery-accent font-semibold' : 'text-bakery-primary'
+                location.pathname === link.path ? 'text-bakery-accent font-semibold' : 'text-bakery-light/90'
               }`}
             >
               {link.name}
@@ -59,7 +59,7 @@ const Navbar = () => {
         <div className="flex items-center gap-4">
           <button
             onClick={() => setIsCartOpen(true)}
-            className="relative p-2 text-bakery-dark hover:text-bakery-accent transition-colors"
+            className="relative p-2 text-bakery-light hover:text-bakery-accent transition-colors"
           >
             <ShoppingBag size={24} />
             {cartCount > 0 && (
@@ -70,7 +70,7 @@ const Navbar = () => {
           </button>
           
           <button
-            className="md:hidden p-2 text-bakery-dark"
+            className="md:hidden p-2 text-bakery-light"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -94,7 +94,7 @@ const Navbar = () => {
                   to={link.path}
                   onClick={() => setMobileMenuOpen(false)}
                   className={`text-lg font-medium p-2 rounded-md ${
-                    location.pathname === link.path ? 'bg-bakery-accent/10 text-bakery-dark font-bold' : 'text-bakery-primary'
+                    location.pathname === link.path ? 'bg-bakery-accent/10 text-bakery-light font-bold' : 'text-bakery-light/80'
                   }`}
                 >
                   {link.name}

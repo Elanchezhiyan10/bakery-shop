@@ -78,7 +78,7 @@ const CartDrawer = () => {
                       <div className="flex-1 flex flex-col justify-between">
                         <div>
                           <h3 className="font-serif font-bold text-bakery-dark line-clamp-1">{item.name}</h3>
-                          <p className="text-sm text-bakery-accent font-medium">${item.price.toFixed(2)}</p>
+                          <p className="text-sm text-bakery-accent font-medium">₹{item.price.toFixed(2)}</p>
                         </div>
                         
                         <div className="flex items-center justify-between mt-2">
@@ -99,7 +99,7 @@ const CartDrawer = () => {
                           </div>
                           
                           <p className="font-bold text-bakery-dark">
-                            ${(item.price * item.quantity).toFixed(2)}
+                            ₹{(item.price * item.quantity).toFixed(2)}
                           </p>
                         </div>
                       </div>
@@ -120,7 +120,7 @@ const CartDrawer = () => {
               <div className="p-6 bg-white border-t border-bakery-accent/20 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
                 <div className="flex justify-between items-center mb-4 text-lg">
                   <span className="text-bakery-primary">Subtotal</span>
-                  <span className="font-bold text-bakery-dark text-xl">${cartTotal.toFixed(2)}</span>
+                  <span className="font-bold text-bakery-dark text-xl">₹{cartTotal.toFixed(2)}</span>
                 </div>
                 <p className="text-xs text-bakery-primary/60 mb-6 text-center">Taxes and shipping calculated at checkout</p>
                 <button

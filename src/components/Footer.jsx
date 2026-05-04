@@ -3,12 +3,12 @@ import { MapPin, Phone, Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-bakery-dark text-bakery-light py-12 px-6">
+    <footer className="glass-dark border-t border-bakery-accent/20 text-bakery-light py-24 px-6 relative overflow-hidden mt-auto">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="space-y-4">
-          <h3 className="text-2xl font-serif font-bold text-bakery-accent border-b-2 border-bakery-accent inline-block pb-1">SweetCrust</h3>
+          <h3 className="text-2xl font-serif font-bold text-bakery-accent border-b-2 border-bakery-accent inline-block pb-1">Kunafa Heaven</h3>
           <p className="text-sm opacity-80 max-w-xs leading-relaxed">
-            Crafting pure happiness using the finest ingredients. Every crust brings an unforgettable sweet memory to your taste buds.
+            Crafting pure happiness using the finest ingredients. Every sweet brings an unforgettable memory to your taste buds.
           </p>
           <div className="flex space-x-4 pt-2">
             <span className="hover:text-bakery-accent cursor-pointer transition-colors font-bold">Fb</span>
@@ -50,14 +50,14 @@ const Footer = () => {
             </div>
             <div className="flex items-center gap-3">
               <Mail size={18} className="text-bakery-accent shrink-0" />
-              <span>hello@sweetcrust.com</span>
+              <span>hello@kunafaheaven.com</span>
             </div>
           </div>
         </div>
       </div>
       
       <div className="border-t border-white/10 mt-12 pt-6 text-center text-sm opacity-60">
-        <p>&copy; {new Date().getFullYear()} SweetCrust Bakery. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Kunafa Heaven. All rights reserved.</p>
       </div>
     </footer>
   );

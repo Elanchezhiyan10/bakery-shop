@@ -23,10 +23,10 @@ const Checkout = () => {
   };
 
   const handleWhatsApp = () => {
-    const phone = "1234567890"; // Bakery owner's WhatsApp number
-    let itemsText = cart.map(item => `${item.quantity}x ${item.name} ($${(item.price * item.quantity).toFixed(2)})`).join('%0A');
+    const phone = "916369590070"; // Bakery owner's WhatsApp number (with country code)
+    let itemsText = cart.map(item => `${item.quantity}x ${item.name} (₹${(item.price * item.quantity).toFixed(2)})`).join('%0A');
     
-    let message = `*New Order*%0A%0A*Customer Details:*%0AName: ${formData.name}%0APhone: ${formData.phone}%0AAddress: ${formData.address}%0ANotes: ${formData.notes || 'None'}%0A%0A*Order Details:*%0A${itemsText}%0A%0A*Total: $${cartTotal.toFixed(2)}*`;
+    let message = `*New Order*%0A%0A*Customer Details:*%0AName: ${formData.name}%0APhone: ${formData.phone}%0AAddress: ${formData.address}%0ANotes: ${formData.notes || 'None'}%0A%0A*Order Details:*%0A${itemsText}%0A%0A*Total: ₹${cartTotal.toFixed(2)}*`;
     
     window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
   };
@@ -69,17 +69,17 @@ const Checkout = () => {
 
   if (success) {
     return (
-      <div className="min-h-screen pt-32 pb-20 flex flex-col items-center justify-center bg-bakery-light px-6">
+      <div className="min-h-screen pt-32 pb-20 flex flex-col items-center justify-center px-6">
         <motion.div 
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          className="bg-white p-10 rounded-3xl shadow-xl text-center max-w-lg border border-bakery-accent/20"
+          className="glass p-10 rounded-3xl shadow-xl text-center max-w-lg border border-bakery-accent/20"
         >
           <div className="flex justify-center mb-6">
             <CheckCircle className="text-green-500 w-24 h-24" />
           </div>
-          <h2 className="text-4xl font-serif font-bold text-bakery-dark mb-4">Order Confirmed!</h2>
-          <p className="text-bakery-primary/80 mb-8">
+          <h2 className="text-4xl font-serif font-bold text-bakery-light mb-4">Order Confirmed!</h2>
+          <p className="text-bakery-light/80 mb-8">
             Thank you for your order, {formData.name}. We've sent your request to our bakery and you should receive a confirmation soon.
           </p>
           <button 
@@ -94,76 +94,76 @@ const Checkout = () => {
   }
 
   return (
-    <div className="min-h-screen pt-28 pb-20 bg-bakery-light">
+    <div className="min-h-screen pt-28 pb-20">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="mb-8 flex items-center gap-4">
           <button 
             onClick={() => navigate('/menu')}
-            className="p-2 bg-white rounded-full hover:bg-bakery-accent/10 transition-colors"
+            className="p-2 bg-white/10 text-bakery-light rounded-full hover:bg-bakery-accent/10 transition-colors"
           >
             <ArrowLeft />
           </button>
-          <h1 className="text-4xl font-serif font-bold text-bakery-dark">Checkout</h1>
+          <h1 className="text-4xl font-serif font-bold text-bakery-light">Checkout</h1>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           
           {/* Form Section */}
           <div className="lg:col-span-7 order-2 lg:order-1">
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-bakery-accent/10">
-              <h2 className="text-2xl font-serif font-bold text-bakery-dark mb-6 border-b pb-4">Delivery Details</h2>
+            <div className="glass p-8 rounded-3xl shadow-sm border border-bakery-accent/20">
+              <h2 className="text-2xl font-serif font-bold text-bakery-light mb-6 border-b border-bakery-accent/20 pb-4">Delivery Details</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-bakery-primary mb-2">Full Name</label>
+                    <label className="block text-sm font-medium text-bakery-light/90 mb-2">Full Name</label>
                     <input 
                       type="text" 
                       name="name" 
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-bakery-light/30 border border-bakery-accent/30 rounded-xl focus:outline-none focus:border-bakery-accent focus:ring-1 focus:ring-bakery-accent"
+                      className="w-full px-4 py-3 bg-white/10 border border-bakery-accent/30 rounded-xl focus:outline-none focus:border-bakery-accent focus:ring-1 focus:ring-bakery-accent text-bakery-light placeholder:text-bakery-light/50"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-bakery-primary mb-2">Phone Number</label>
+                    <label className="block text-sm font-medium text-bakery-light/90 mb-2">Phone Number</label>
                     <input 
                       type="tel" 
                       name="phone" 
                       required
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-bakery-light/30 border border-bakery-accent/30 rounded-xl focus:outline-none focus:border-bakery-accent focus:ring-1 focus:ring-bakery-accent"
+                      className="w-full px-4 py-3 bg-white/10 border border-bakery-accent/30 rounded-xl focus:outline-none focus:border-bakery-accent focus:ring-1 focus:ring-bakery-accent text-bakery-light placeholder:text-bakery-light/50"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-bakery-primary mb-2">Delivery Address</label>
+                  <label className="block text-sm font-medium text-bakery-light/90 mb-2">Delivery Address</label>
                   <textarea 
                     name="address" 
                     required
                     rows="3"
                     value={formData.address}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-bakery-light/30 border border-bakery-accent/30 rounded-xl focus:outline-none focus:border-bakery-accent focus:ring-1 focus:ring-bakery-accent resize-none"
+                    className="w-full px-4 py-3 bg-white/10 border border-bakery-accent/30 rounded-xl focus:outline-none focus:border-bakery-accent focus:ring-1 focus:ring-bakery-accent resize-none text-bakery-light placeholder:text-bakery-light/50"
                   ></textarea>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-bakery-primary mb-2">Order Notes (Optional)</label>
+                  <label className="block text-sm font-medium text-bakery-light/90 mb-2">Order Notes (Optional)</label>
                   <textarea 
                     name="notes" 
                     rows="2"
                     value={formData.notes}
                     onChange={handleChange}
                     placeholder="e.g. Any allergies, special requests..."
-                    className="w-full px-4 py-3 bg-bakery-light/30 border border-bakery-accent/30 rounded-xl focus:outline-none focus:border-bakery-accent focus:ring-1 focus:ring-bakery-accent resize-none"
+                    className="w-full px-4 py-3 bg-white/10 border border-bakery-accent/30 rounded-xl focus:outline-none focus:border-bakery-accent focus:ring-1 focus:ring-bakery-accent resize-none text-bakery-light placeholder:text-bakery-light/50"
                   ></textarea>
                 </div>
 
-                <div className="pt-4 mt-6 border-t">
+                <div className="pt-4 mt-6 border-t border-bakery-accent/20">
                   <button 
                     type="submit" 
                     disabled={submitting || cart.length === 0}
@@ -171,7 +171,7 @@ const Checkout = () => {
                   >
                     {submitting ? 'Processing...' : 'Place Order'}
                   </button>
-                  <p className="text-xs text-center text-bakery-primary/60 mt-4">
+                  <p className="text-xs text-center text-bakery-light/60 mt-4">
                     By placing an order, you agree to our terms and conditions. You will be redirected to WhatsApp to confirm your order.
                   </p>
                 </div>
@@ -182,7 +182,7 @@ const Checkout = () => {
 
           {/* Cart Summary Section */}
           <div className="lg:col-span-5 order-1 lg:order-2">
-            <div className="bg-bakery-dark rounded-3xl p-8 sticky top-28 shadow-xl text-bakery-light">
+            <div className="glass-dark border border-bakery-accent/20 rounded-3xl p-8 sticky top-28 shadow-xl text-bakery-light">
               <h2 className="text-2xl font-serif font-bold text-bakery-accent mb-6 flex items-center gap-2 border-b border-white/10 pb-4">
                 <ShoppingBag /> Order Summary
               </h2>
@@ -200,10 +200,10 @@ const Checkout = () => {
                           <img src={item.image} alt={item.name} className="w-14 h-14 rounded-lg object-cover bg-white/10" />
                           <div>
                             <p className="font-bold text-sm line-clamp-1">{item.name}</p>
-                            <p className="text-bakery-accent text-xs">{item.quantity} x ${item.price.toFixed(2)}</p>
+                            <p className="text-bakery-accent text-xs">{item.quantity} x ₹{item.price.toFixed(2)}</p>
                           </div>
                         </div>
-                        <p className="font-bold font-serif whitespace-nowrap">${(item.quantity * item.price).toFixed(2)}</p>
+                        <p className="font-bold font-serif whitespace-nowrap">₹{(item.quantity * item.price).toFixed(2)}</p>
                       </div>
                     ))}
                   </div>
@@ -211,7 +211,7 @@ const Checkout = () => {
                   <div className="mt-6 pt-6 border-t border-white/10 space-y-3">
                     <div className="flex justify-between text-white/70 text-sm">
                       <span>Subtotal</span>
-                      <span>${cartTotal.toFixed(2)}</span>
+                      <span>₹{cartTotal.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between text-white/70 text-sm">
                       <span>Delivery</span>
@@ -219,7 +219,7 @@ const Checkout = () => {
                     </div>
                     <div className="flex justify-between text-xl font-bold font-serif text-bakery-accent pt-2">
                       <span>Total</span>
-                      <span>${cartTotal.toFixed(2)}</span>
+                      <span>₹{cartTotal.toFixed(2)}</span>
                     </div>
                   </div>
                 </>
